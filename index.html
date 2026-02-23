@@ -3,171 +3,233 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CTX Technologies — MSP + AI Solutions</title>
-  <meta name="description" content="CTX Technologies delivers modern managed IT and practical AI solutions for growing businesses." />
+  <title>CTX Technologies — Modern Managed IT + AI</title>
+  <meta name="description" content="CTX Technologies delivers premium managed IT and practical AI for growth‑minded teams." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0b1020;
-      --card: #10192f;
-      --text: #e8edf7;
-      --muted: #9fb0d1;
-      --accent: #7dd3fc;
-      --accent-2: #a78bfa;
-      --glow: 0 20px 60px rgba(125, 211, 252, 0.2);
+      --bg: #07090c;
+      --bg-2: #0c0f14;
+      --card: #10151c;
+      --text: #f2f4f7;
+      --muted: #a0a8b4;
+      --accent: #a7c7ff;
+      --line: rgba(255,255,255,.08);
+      --glow: 0 25px 60px rgba(0,0,0,.5);
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
-      background: radial-gradient(1200px 800px at 10% 0%, #162144 0%, #0b1020 60%) fixed;
+      font-family: Manrope, Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
       color: var(--text);
+      background:
+        radial-gradient(900px 600px at 10% -10%, rgba(167,199,255,.12), transparent 60%),
+        radial-gradient(900px 700px at 90% 0%, rgba(120,150,255,.08), transparent 65%),
+        var(--bg);
     }
-    .container { max-width: 1080px; margin: 0 auto; padding: 32px 20px 72px; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 26px 20px 80px; }
+
     header {
       display: flex; align-items: center; justify-content: space-between; gap: 16px;
-      margin-bottom: 64px;
+      padding: 12px 0 20px; border-bottom: 1px solid rgba(255,255,255,.05);
+      position: sticky; top: 0; z-index: 10;
+      background: linear-gradient(180deg, rgba(7,9,12,.92), rgba(7,9,12,.6));
+      backdrop-filter: blur(6px);
     }
-    .logo {
-      display: inline-flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: .4px;
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 600; letter-spacing: .4px; }
+    .brand-mark {
+      width: 42px; height: 42px; border-radius: 10px; background: linear-gradient(135deg, #cfe2ff, #8ab6ff);
+      color: #06080b; display: grid; place-items: center; font-weight: 800; font-size: 13px;
     }
-    .logo-mark {
-      width: 46px; height: 46px; border-radius: 12px;
-      box-shadow: var(--glow);
-      display: block;
-    }
-    .cta { display: inline-flex; gap: 12px; align-items: center; }
-    .btn {
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      color: #07101f; padding: 12px 18px; border-radius: 10px; font-weight: 600;
-      text-decoration: none; box-shadow: var(--glow);
-    }
-    .btn.secondary {
-      background: transparent; color: var(--text); border: 1px solid #2a385d; box-shadow: none;
-    }
+    nav { display: flex; gap: 20px; font-size: 13px; color: var(--muted); }
+    nav a:hover { color: var(--text); }
+
     .hero {
-      display: grid; grid-template-columns: 1.2fr 1fr; gap: 36px; align-items: center;
-      margin-bottom: 56px;
+      display: grid; grid-template-columns: 1.2fr .9fr; gap: 46px; align-items: center;
+      padding: 70px 0 60px;
     }
-    .hero h1 { font-size: 44px; line-height: 1.1; margin: 0 0 16px; }
-    .hero p { color: var(--muted); font-size: 18px; margin: 0 0 24px; }
-    .hero-card {
-      background: linear-gradient(180deg, rgba(16,25,47,.9), rgba(16,25,47,.75));
-      border: 1px solid #1d2947; border-radius: 18px; padding: 28px; box-shadow: var(--glow);
+    .eyebrow { color: var(--accent); font-size: 12px; text-transform: uppercase; letter-spacing: .3em; }
+    h1 { font-size: 54px; line-height: 1.05; margin: 14px 0 18px; font-weight: 600; }
+    .lead { color: var(--muted); font-size: 18px; line-height: 1.7; max-width: 560px; }
+    .cta { display: flex; gap: 12px; margin-top: 24px; flex-wrap: wrap; }
+    .btn {
+      padding: 12px 20px; border-radius: 999px; font-weight: 600; letter-spacing: .3px; font-size: 14px;
+      border: 1px solid rgba(255,255,255,.12); background: transparent; color: var(--text);
     }
-    .pill {
-      display: inline-flex; align-items: center; gap: 10px; padding: 8px 14px; border-radius: 999px;
-      background: rgba(125, 211, 252, .1); color: var(--accent); font-weight: 600; font-size: 13px;
-      border: 1px solid rgba(125, 211, 252, .3);
-      margin-bottom: 12px;
+    .btn.primary {
+      border: none; color: #0b0f14; background: linear-gradient(135deg, #cfe2ff, #8ab6ff);
+      box-shadow: var(--glow);
     }
-    .grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px;
+
+    .spec-panel {
+      background: linear-gradient(160deg, #0f141b, #0a0d12); border: 1px solid var(--line);
+      border-radius: 18px; padding: 24px; box-shadow: var(--glow);
     }
-    .card {
-      background: var(--card); border: 1px solid #1d2947; border-radius: 16px; padding: 22px;
+    .spec-panel h3 { margin: 0 0 10px; font-size: 16px; text-transform: uppercase; letter-spacing: .22em; color: var(--accent); }
+    .specs { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; }
+    .spec { padding: 14px; border-radius: 12px; background: var(--card); border: 1px solid rgba(255,255,255,.06); }
+    .spec .label { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .16em; }
+    .spec .value { font-size: 20px; margin-top: 6px; }
+
+    .section { padding: 42px 0; border-top: 1px solid rgba(255,255,255,.06); }
+    .section h2 { font-size: 34px; margin: 0 0 16px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+    .card { background: var(--bg-2); border: 1px solid var(--line); padding: 20px; border-radius: 16px; }
+    .card h3 { margin: 0 0 8px; font-size: 18px; }
+    .card p { margin: 0; color: var(--muted); line-height: 1.6; }
+
+    .story { display: grid; grid-template-columns: 1.2fr .8fr; gap: 26px; align-items: center; }
+    .stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: 16px; }
+    .stat { text-align: center; padding: 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.08); }
+    .stat .num { font-size: 26px; font-weight: 600; color: var(--accent); }
+    .stat .label { color: var(--muted); text-transform: uppercase; letter-spacing: .12em; font-size: 11px; margin-top: 6px; }
+
+    .cta-panel {
+      border: 1px solid rgba(255,255,255,.1); border-radius: 18px; padding: 26px;
+      background: linear-gradient(135deg, rgba(167,199,255,.1), rgba(7,9,12,.9));
+      display: flex; flex-direction: column; gap: 12px; align-items: flex-start;
     }
-    .card h3 { margin: 0 0 10px; font-size: 18px; }
-    .card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
-    .section { margin-bottom: 48px; }
-    .section h2 { margin: 0 0 16px; font-size: 28px; }
-    .section p.lead { color: var(--muted); margin: 0 0 24px; }
-    footer { color: var(--muted); font-size: 13px; border-top: 1px solid #1d2947; padding-top: 20px; }
+
+    footer { color: var(--muted); font-size: 12px; padding: 22px 0; }
+
     @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; }
-      header { flex-direction: column; align-items: flex-start; }
+      header { position: static; flex-direction: column; align-items: flex-start; }
+      .hero, .story { grid-template-columns: 1fr; }
+      h1 { font-size: 42px; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="wrap">
     <header>
-      <div class="logo">
-        <img class="logo-mark" src="./assets/ctx-logo.svg" alt="CTX Technologies logo" />
+      <div class="brand">
+        <div class="brand-mark">CTX</div>
         <div>CTX Technologies</div>
       </div>
-      <div class="cta">
-        <a class="btn secondary" href="mailto:hello@ctx-technology.com">Contact</a>
-        <a class="btn" href="#call">Book a Call</a>
-      </div>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#platform">Platform</a>
+        <a href="#results">Results</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn" href="mailto:hello@ctx-technology.com">Request a Call</a>
     </header>
 
     <section class="hero">
       <div>
-        <div class="pill">Managed IT + Practical AI</div>
-        <h1>Modern IT that runs clean — and AI that actually helps.</h1>
-        <p>CTX Technologies is a next‑gen MSP in Texas delivering fast, trustworthy support and AI solutions that remove busywork, harden security, and help your team move faster.</p>
+        <div class="eyebrow">Managed IT + Practical AI</div>
+        <h1>Precision IT operations for modern teams.</h1>
+        <p class="lead">CTX Technologies delivers a sleek, high‑trust MSP experience: rapid response, hardened security, and AI automation that quietly removes operational drag.</p>
         <div class="cta">
-          <a class="btn" href="#call">Get a free IT assessment</a>
-          <a class="btn secondary" href="#services">See services</a>
+          <a class="btn primary" href="#contact">Schedule a consult</a>
+          <a class="btn" href="#services">Explore services</a>
         </div>
       </div>
-      <div class="hero-card">
-        <h3>What we’re great at</h3>
-        <ul style="color: var(--muted); padding-left: 18px; line-height: 1.8;">
-          <li>Responsive MSP support & device management</li>
-          <li>Cybersecurity hardening & backup strategy</li>
-          <li>AI workflows for ops, support, and sales</li>
-          <li>Cloud & network reliability improvements</li>
-        </ul>
+      <div class="spec-panel">
+        <h3>Operational Profile</h3>
+        <div class="specs">
+          <div class="spec">
+            <div class="label">Response Window</div>
+            <div class="value">15–30 min</div>
+          </div>
+          <div class="spec">
+            <div class="label">Coverage</div>
+            <div class="value">US + Remote</div>
+          </div>
+          <div class="spec">
+            <div class="label">Security Stack</div>
+            <div class="value">MFA • EDR • SIEM</div>
+          </div>
+          <div class="spec">
+            <div class="label">Automation ROI</div>
+            <div class="value">10–40 hrs/mo</div>
+          </div>
+        </div>
       </div>
     </section>
 
     <section id="services" class="section">
-      <h2>Services</h2>
-      <p class="lead">A light, modern stack that keeps your business safe, stable, and productive.</p>
+      <h2>Signature Services</h2>
       <div class="grid">
         <div class="card">
           <h3>Managed IT</h3>
-          <p>End‑to‑end support, patching, endpoint management, and help desk coverage tailored to your team.</p>
+          <p>Endpoint management, patching, and white‑glove helpdesk coverage tailored to your team.</p>
         </div>
         <div class="card">
           <h3>Cybersecurity</h3>
-          <p>Identity protection, phishing defense, MFA, monitoring, and backup verification.</p>
+          <p>Identity protection, phishing defense, backup verification, and policy hardening.</p>
         </div>
         <div class="card">
           <h3>AI Enablement</h3>
-          <p>Automate repetitive tasks, deploy internal assistants, and integrate AI into daily workflows.</p>
+          <p>Internal copilots, workflow automations, and secure AI integrations for ops, sales, and support.</p>
         </div>
         <div class="card">
           <h3>Cloud & Network</h3>
-          <p>Design, migration, and optimization for cloud apps, connectivity, and on‑prem reliability.</p>
+          <p>Design, migrations, and performance optimization for modern cloud stacks and on‑prem reliability.</p>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <section id="platform" class="section">
+      <div class="story">
+        <div>
+          <h2>CTX Technology Platform</h2>
+          <p class="lead">A modern, resilient baseline that keeps your business stable, secure, and fast — with measured outcomes and clear ownership.</p>
+        </div>
+        <div class="stat-row">
+          <div class="stat">
+            <div class="num">24/7</div>
+            <div class="label">Monitoring</div>
+          </div>
+          <div class="stat">
+            <div class="num">99.9%</div>
+            <div class="label">Uptime Target</div>
+          </div>
+          <div class="stat">
+            <div class="num">15+</div>
+            <div class="label">Security Controls</div>
+          </div>
+          <div class="stat">
+            <div class="num">90 Days</div>
+            <div class="label">Runbook Coverage</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="results" class="section">
       <h2>Why CTX</h2>
       <div class="grid">
         <div class="card">
-          <h3>Clear, honest guidance</h3>
-          <p>No fluff. We translate tech into decisions you can trust.</p>
+          <h3>Clear guidance</h3>
+          <p>We translate tech into decisions you can trust — no fluff, no hand‑waving.</p>
         </div>
         <div class="card">
-          <h3>Fast response</h3>
-          <p>We prioritize speed and proactive monitoring to stop problems early.</p>
+          <h3>Proactive response</h3>
+          <p>We prioritize speed, prevention, and clean escalation paths to stop problems early.</p>
         </div>
         <div class="card">
           <h3>AI with ROI</h3>
-          <p>We only recommend automation that saves real time or money.</p>
+          <p>Automation only lands when it saves real time and reduces real cost.</p>
         </div>
       </div>
     </section>
 
-    <section id="call" class="section hero-card">
-      <h2>Let’s talk</h2>
-      <p class="lead">Tell us about your environment and goals. We’ll map quick wins and a simple plan.</p>
-      <div class="cta">
-        <a class="btn" href="mailto:hello@ctx-technology.com">hello@ctx-technology.com</a>
-        <a class="btn secondary" href="https://ctx-technology.com" target="_blank" rel="noopener">ctx-technology.com</a>
+    <section id="contact" class="section">
+      <div class="cta-panel">
+        <h2>Let’s talk</h2>
+        <p class="lead">Tell us your goals and current environment. We’ll map fast wins and a plan that fits.</p>
+        <div class="cta">
+          <a class="btn primary" href="mailto:hello@ctx-technology.com">hello@ctx-technology.com</a>
+          <a class="btn" href="https://ctx-technology.com" target="_blank" rel="noopener">ctx-technology.com</a>
+        </div>
       </div>
     </section>
 
-    <footer>
-      © 2026 CTX Technologies • Plano, TX • Managed IT + AI Solutions
-    </footer>
+    <footer>© 2026 CTX Technologies • Plano, TX • Managed IT + AI Solutions</footer>
   </div>
 </body>
 </html>
